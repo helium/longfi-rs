@@ -89,33 +89,33 @@ pub const lfc_res_lfc_res_invalid_flags: lfc_res = 6;
 pub type lfc_res = i32;
 #[doc = " LongFi user configuration."]
 #[repr(C)]
-#[derive(Debug, Copy, Clone)]
+#[derive(Debug)]
 pub struct lfc_user_cfg {
     #[doc = " Data provided by user, and included with every callback."]
-    pub cb_data: *mut ::std::os::raw::c_void,
+    pub cb_data: *mut ::core::ffi::c_void,
     #[doc = " Organizational Unique Identifier."]
     pub oui: u32,
     #[doc = " Device ID."]
     pub did: u32,
     #[doc = " Session key."]
-    pub key: *const ::std::os::raw::c_void,
+    pub key: *const ::core::ffi::c_void,
     #[doc = " Size (in bytes) of session key."]
     pub key_len: size_t,
 }
 #[test]
 fn bindgen_test_layout_lfc_user_cfg() {
     assert_eq!(
-        ::std::mem::size_of::<lfc_user_cfg>(),
+        ::core::mem::size_of::<lfc_user_cfg>(),
         32usize,
         concat!("Size of: ", stringify!(lfc_user_cfg))
     );
     assert_eq!(
-        ::std::mem::align_of::<lfc_user_cfg>(),
+        ::core::mem::align_of::<lfc_user_cfg>(),
         8usize,
         concat!("Alignment of ", stringify!(lfc_user_cfg))
     );
     assert_eq!(
-        unsafe { &(*(::std::ptr::null::<lfc_user_cfg>())).cb_data as *const _ as usize },
+        unsafe { &(*(::core::ptr::null::<lfc_user_cfg>())).cb_data as *const _ as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -125,7 +125,7 @@ fn bindgen_test_layout_lfc_user_cfg() {
         )
     );
     assert_eq!(
-        unsafe { &(*(::std::ptr::null::<lfc_user_cfg>())).oui as *const _ as usize },
+        unsafe { &(*(::core::ptr::null::<lfc_user_cfg>())).oui as *const _ as usize },
         8usize,
         concat!(
             "Offset of field: ",
@@ -135,7 +135,7 @@ fn bindgen_test_layout_lfc_user_cfg() {
         )
     );
     assert_eq!(
-        unsafe { &(*(::std::ptr::null::<lfc_user_cfg>())).did as *const _ as usize },
+        unsafe { &(*(::core::ptr::null::<lfc_user_cfg>())).did as *const _ as usize },
         12usize,
         concat!(
             "Offset of field: ",
@@ -145,7 +145,7 @@ fn bindgen_test_layout_lfc_user_cfg() {
         )
     );
     assert_eq!(
-        unsafe { &(*(::std::ptr::null::<lfc_user_cfg>())).key as *const _ as usize },
+        unsafe { &(*(::core::ptr::null::<lfc_user_cfg>())).key as *const _ as usize },
         16usize,
         concat!(
             "Offset of field: ",
@@ -155,7 +155,7 @@ fn bindgen_test_layout_lfc_user_cfg() {
         )
     );
     assert_eq!(
-        unsafe { &(*(::std::ptr::null::<lfc_user_cfg>())).key_len as *const _ as usize },
+        unsafe { &(*(::core::ptr::null::<lfc_user_cfg>())).key_len as *const _ as usize },
         24usize,
         concat!(
             "Offset of field: ",
@@ -167,7 +167,7 @@ fn bindgen_test_layout_lfc_user_cfg() {
 }
 #[doc = " LongFi context."]
 #[repr(C)]
-#[derive(Debug, Copy, Clone)]
+#[derive(Debug)]
 pub struct lfc {
     #[doc = " Monotonically increasing number included in datagrams."]
     pub seq: u32,
@@ -177,22 +177,22 @@ pub struct lfc {
 #[test]
 fn bindgen_test_layout_lfc() {
     assert_eq!(
-        ::std::mem::size_of::<lfc>(),
+        ::core::mem::size_of::<lfc>(),
         40usize,
         concat!("Size of: ", stringify!(lfc))
     );
     assert_eq!(
-        ::std::mem::align_of::<lfc>(),
+        ::core::mem::align_of::<lfc>(),
         8usize,
         concat!("Alignment of ", stringify!(lfc))
     );
     assert_eq!(
-        unsafe { &(*(::std::ptr::null::<lfc>())).seq as *const _ as usize },
+        unsafe { &(*(::core::ptr::null::<lfc>())).seq as *const _ as usize },
         0usize,
         concat!("Offset of field: ", stringify!(lfc), "::", stringify!(seq))
     );
     assert_eq!(
-        unsafe { &(*(::std::ptr::null::<lfc>())).cfg as *const _ as usize },
+        unsafe { &(*(::core::ptr::null::<lfc>())).cfg as *const _ as usize },
         8usize,
         concat!("Offset of field: ", stringify!(lfc), "::", stringify!(cfg))
     );
