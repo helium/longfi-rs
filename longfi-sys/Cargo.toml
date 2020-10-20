@@ -1,0 +1,10 @@
+[package]
+name = "longfi-sys"
+version = "0.1.0"
+authors = ["Marc Nijdam <marc@helium.com>"]
+edition = "2018"
+links = "lfc"
+build = "build.rs"
+
+[build-dependencies]
+cmake = "0.1"
