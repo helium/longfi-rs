@@ -197,79 +197,18 @@ fn bindgen_test_layout_lfc() {
         concat!("Offset of field: ", stringify!(lfc), "::", stringify!(cfg))
     );
 }
-#[doc = " Represents this library's version."]
-#[repr(C)]
-#[derive(Debug, Copy, Clone)]
-pub struct lfc_version {
-    #[doc = " Indicates braking changes when incremented."]
-    pub major: u8,
-    #[doc = " Indicates added functionality when incremented."]
-    pub minor: u8,
-    #[doc = " Indicates bug fixes when incremented."]
-    pub patch: u8,
-}
-#[test]
-fn bindgen_test_layout_lfc_version() {
-    assert_eq!(
-        ::std::mem::size_of::<lfc_version>(),
-        3usize,
-        concat!("Size of: ", stringify!(lfc_version))
-    );
-    assert_eq!(
-        ::std::mem::align_of::<lfc_version>(),
-        1usize,
-        concat!("Alignment of ", stringify!(lfc_version))
-    );
-    assert_eq!(
-        unsafe { &(*(::std::ptr::null::<lfc_version>())).major as *const _ as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(lfc_version),
-            "::",
-            stringify!(major)
-        )
-    );
-    assert_eq!(
-        unsafe { &(*(::std::ptr::null::<lfc_version>())).minor as *const _ as usize },
-        1usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(lfc_version),
-            "::",
-            stringify!(minor)
-        )
-    );
-    assert_eq!(
-        unsafe { &(*(::std::ptr::null::<lfc_version>())).patch as *const _ as usize },
-        2usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(lfc_version),
-            "::",
-            stringify!(patch)
-        )
-    );
-}
-extern "C" {
-    #[doc = " Returns `longfi-core`'s version number."]
-    pub fn lfc_version() -> lfc_version;
-}
 extern "C" {
     #[doc = " Initializes a user-provided `lfc` object."]
-    #[doc = ""]
-    #[doc = " @param lfc               LongFi Context."]
-    #[doc = " @param cfg               User-provided configuration."]
     pub fn lfc_init(lfc: *mut lfc, cfg: lfc_user_cfg);
 }
 extern "C" {
     #[doc = " Decodes a datagram from `in` buffer."]
     #[doc = ""]
     #[doc = " @param lfc               LongFi Context."]
-    #[doc = " @param[in] in            Buffer containing an encoded datagram."]
+    #[doc = " @param in[in]            Buffer containing an encoded datagram."]
     #[doc = " @param in_len            Length of `in`."]
-    #[doc = " @param[out] out          Buffer to write decoded payload to."]
-    #[doc = " @param[in,out] out_len    in: capacity of `out` buffer.\\n"]
+    #[doc = " @param out[out]          Buffer to write decoded payload to."]
+    #[doc = " @param[in,out] dg_len    in: capacity of `out` buffer."]
     #[doc = "                          out: actual size of payload."]
     pub fn lfc_receive(
         lfc: *const lfc,
@@ -287,7 +226,7 @@ extern "C" {
     #[doc = " @param pay               Payload you want to send."]
     #[doc = " @param pay_len           Length of `pay`."]
     #[doc = " @param out               Buffer to serialize datagram into."]
-    #[doc = " @param[in,out] out_len    in: capacity of `out` buffer.\\n"]
+    #[doc = " @param[in,out] dg_len    in: capacity of `out` buffer."]
     #[doc = "                          out: actual serialized size of datagram."]
     pub fn lfc_transmit(
         lfc: *mut lfc,
