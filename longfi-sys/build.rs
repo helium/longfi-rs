@@ -1,8 +1,7 @@
-use cmake;
-
-// Builds the project in the directory located in `libfoo`, installing it
-// into $OUT_DIR
-//
+// This build script's sole purpose is to build the raw longfi-core
+// (`lfc`) library. Since this is a glacially moving API, we generate
+// bindings manually and check in the generated code to save the user
+// from a slow build step.
 fn main() {
     let install_dir = cmake::build("vendor");
 
