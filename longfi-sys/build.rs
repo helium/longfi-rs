@@ -4,13 +4,15 @@
 // from a slow build step.
 fn main() {
     let install_dir = cmake::build("vendor");
-
     let includedir = install_dir.join("include");
     let libdir = install_dir.join("lib");
-    let libname = "lfc";
 
     println!("cargo:rustc-link-search=native={}", libdir.display());
     println!("cargo:root={}", install_dir.display());
     println!("cargo:include={}", includedir.display());
-    println!("cargo:rustc-link-lib=static={}", libname);
+    println!("cargo:rustc-link-lib=static=lfc");
+    println!("cargo:rustc-link-lib=static=blake2");
+    println!("cargo:rustc-link-lib=static=cursor");
+    println!("cargo:rustc-link-lib=static=golay");
+    println!("cargo:rustc-link-lib=static=cursor_varint");
 }

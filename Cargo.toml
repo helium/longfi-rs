@@ -1,6 +1,6 @@
 [package]
 authors = ["Marc Nijdam <marc@helium.com>", "Jay Kickliter <jay@helium.com>"]
-categories = ["embedded", "no-std"]
+categories = ["embedded"]
 description = "An API for processing Helium LongFi wireless packets"
 edition = "2018"
 homepage = "https://github.com/helium/longfi-rs"
@@ -15,4 +15,4 @@ version = "0.2.0"
 members = ["longfi-sys"]
 
 [dependencies]
-longfi-sys = { path = "longfi-sys" }
+lfs = { package = "longfi-sys", path = "longfi-sys" }

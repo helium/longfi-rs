@@ -7,4 +7,8 @@ bindgen \
     --use-core \
     --whitelist-function '^lfc_.*' \
     --whitelist-var '^lfc_.*' \
-    -- -I vendor/include
+    --rustified-enum '^lfc_res' \
+    --whitelist-function '^cursor_.*' \
+    -- \
+    -I vendor/include \
+    -I vendor/extra/cursor/include
