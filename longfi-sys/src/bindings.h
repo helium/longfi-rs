@@ -1,3 +1,6 @@
+#include "cursor/cursor.h"
 #include "lfc/datagram.h"
 #include "lfc/fingerprint.h"
 #include "lfc/lfc.h"
+#include "lfc/priv/lfc_dg_des.h"
+#include "lfc/priv/lfc_dg_ser.h"
